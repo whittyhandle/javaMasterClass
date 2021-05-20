@@ -8,4 +8,11 @@ public class Main {
         }
         return "invalid value";
     }
+
+    public static String getDurationString(int minutes) {
+        if (minutes >= 0) {
+            return "valid number";
+        }
+        return "invalid value";
+    }
 }
