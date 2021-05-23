@@ -20,7 +20,7 @@ class MainTest {
 
     @Test
     public void testGetDurationString2() {
-        String test1 = m.getDurationString(-12);
+        String test1 = m.getDurationString(-22);
         assertEquals("invalid value", test1);
 
     }
