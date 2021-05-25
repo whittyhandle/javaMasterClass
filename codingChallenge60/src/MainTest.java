@@ -6,23 +6,49 @@ import static org.junit.jupiter.api.Assertions.*;
 class MainTest {
 
     Main m;
+
     @BeforeEach
-    public void init() {
+    public void init(){
         m = new Main();
     }
 
-
     @Test
     public void testGetDurationString() {
-        String test1 = m.getDurationString(0, 66);
-        assertEquals("invalid value", test1);
+        assertEquals("0h 10m 4s", m.getDurationString(10, 4));
     }
 
     @Test
     public void testGetDurationString2() {
-        String test1 = m.getDurationString(-22);
-        assertEquals("invalid value", test1);
-
+        assertEquals("10h 50m 30s", m.getDurationString(650, 30));
     }
+
+    @Test
+    public void testGetDurationString3() {
+        assertEquals("1h 0m 4s", m.getDurationString(60, 4));
+    }
+
+    @Test
+    public void testGetDurationString4() {
+        assertEquals("Invalid number", m.getDurationString(-10, 4));
+    }
+
+    @Test
+    public void testGetDurationString5() {
+        assertEquals("Invalid number", m.getDurationString(10, -4));
+    }
+
+    @Test
+    public void testGetDurationString6() {
+        assertEquals("Invalid number", m.getDurationString(10, 60));
+    }
+
+    @Test
+    public void testGetDurationString7(){
+        assertEquals("Invalid number", m.getDurationString(-12));
+    }
+
+    @Test
+    public void testGetDurationString8(){
+        assertEquals("00h 01m 05s", m.getDurationString(65));
 }
 
