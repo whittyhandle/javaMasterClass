@@ -42,4 +42,10 @@ public class Main {
         return getDurationString(minutes, remainingSeconds);
     }
 
+    public static String getDurationString(int minutes) {
+        if (minutes >= 0) {
+            return "valid number";
+        }
+        return "invalid value";
+    }
 }
