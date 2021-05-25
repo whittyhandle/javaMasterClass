@@ -50,5 +50,6 @@ class MainTest {
     @Test
     public void testGetDurationString8(){
         assertEquals("00h 01m 05s", m.getDurationString(65));
+    }
 }
 
