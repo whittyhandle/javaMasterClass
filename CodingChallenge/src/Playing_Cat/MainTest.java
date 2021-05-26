@@ -1,3 +1,6 @@
+package Playing_Cat;
+
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -13,12 +16,12 @@ class MainTest {
     @Test
     public void testIsCatPlayingfalse() {
         boolean b = m.isCatPlaying(true,4);
-        assertFalse(b);
+        Assertions.assertFalse(b);
     }
 
     @Test
     public void testIsCatPlayingtrue() {
         boolean b = m.isCatPlaying(true,25);
-        assertTrue(b);
+        Assertions.assertTrue(b);
     }
 }
