@@ -14,13 +14,13 @@ class MainTest {
     }
 
     @Test
-    public void testIsCatPlayingfalse() {
-        boolean b = m.isCatPlaying(true,4);
+    public void testIsCatPlayingFalse() {
+        boolean b = m.isCatPlaying(false,4);
         Assertions.assertFalse(b);
     }
 
     @Test
-    public void testIsCatPlayingtrue() {
+    public void testIsCatPlayingTrue() {
         boolean b = m.isCatPlaying(true,25);
         Assertions.assertTrue(b);
     }

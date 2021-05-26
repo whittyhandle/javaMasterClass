@@ -1,3 +1,5 @@
+package CodingChallenge60;
+
 public class Main {
 
     private static final String INVALID_STRING_MESSAGE = "Invalid number";
