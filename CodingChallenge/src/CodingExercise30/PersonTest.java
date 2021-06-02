@@ -8,7 +8,7 @@ import java.lang.reflect.Field;
 import static org.junit.jupiter.api.Assertions.*;
 
 class PersonTest {
-    // todo set tests up
+
     Person person;
 
     @BeforeEach
