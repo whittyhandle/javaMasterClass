@@ -29,6 +29,15 @@ public class Account {
             System.out.println("You withdrew: $" + withdrawalAmt);
             System.out.println("Your new balance is: $" + (this.balance - withdrawalAmt));
         }
+        
+        // Alternative way to do the above code
+        //final double remainingBalance = this.balance - withdrawalAmt;
+
+		//String out2 = this.name + ", " + "you "
+				//+ (remainingBalance < 0 ? "have insufficient funds"
+						//: "withrew $" + withdrawalAmt + " and have a remaining balance of $" + remainingBalance)
+				//+ " in your account \n";
+		//System.out.println(out2);
     }
 
     public String getAccountNum() {
