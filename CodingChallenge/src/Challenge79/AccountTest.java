@@ -1,4 +1,4 @@
-package Challenge79;
+package CodingChallenge.src.Challenge79;
 
 import static org.junit.jupiter.api.Assertions.*;
 
