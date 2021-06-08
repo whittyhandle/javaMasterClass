@@ -12,5 +12,6 @@ public class Main {
 
         account2.deposit(50.0);
         account2.withdrawal(350.0);
+        System.out.println(account2.getBalance() + "test test");
     }
 }

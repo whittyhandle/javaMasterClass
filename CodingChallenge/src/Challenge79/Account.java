@@ -8,6 +8,10 @@ public class Account {
     private String email;
     private String phoneNum;
 
+    public Account() { // default constructor for easier testing
+    }
+
+
     public Account(String accountNum, double balance, String name, String email, String phoneNum) {
         this.accountNum = accountNum;
         this.balance = balance;
@@ -16,18 +20,21 @@ public class Account {
         this.phoneNum = phoneNum;
     }
 
-    public void deposit(double depositAmt){
-        this.balance = this.balance + depositAmt;
+    public double deposit(double depositAmt){ // added return type for testing
         System.out.println("You deposited: $" + depositAmt);
         System.out.println("Your new balance is: $" + this.balance);
+        return (this.balance = this.balance + depositAmt);
     }
 
-    public void withdrawal(double withdrawalAmt){
+    public double withdrawal(double withdrawalAmt){ // added return type and
         if(this.balance - withdrawalAmt < 0) {
             System.out.println("Insufficient account balance. Withdrawal denied.");
+            return this.balance;
         } else {
             System.out.println("You withdrew: $" + withdrawalAmt);
-            System.out.println("Your new balance is: $" + (this.balance - withdrawalAmt));
+            System.out.println("Your new balance is: $" + (this.balance - withdrawalAmt)); // I don't know if removes form the balance
+            this.balance = this.balance - withdrawalAmt;
+            return this.balance; // made it so it removes from the balance
         }
         
         // Alternative way to do the above code
@@ -52,8 +59,9 @@ public class Account {
         return balance;
     }
 
-    public void setBalance(double balance) {
+    public double setBalance(double balance) {
         this.balance = balance;
+        return balance;
     }
 
     public String getName() {
