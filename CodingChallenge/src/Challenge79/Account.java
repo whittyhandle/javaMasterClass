@@ -1,4 +1,4 @@
-package Challenge79;
+package CodingChallenge.src.Challenge79;
 
 public class Account {
 
