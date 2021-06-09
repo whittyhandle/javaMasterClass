@@ -1,4 +1,4 @@
-package CodingChallenge.src.Challenge79;
+package Challenge79;
 
 public class Main {
 
