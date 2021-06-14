@@ -2,19 +2,28 @@ package CodingExercise33;
 
 public class Floor {
     // Declare variables
-    // double width
-    // double length
+	private double width;
+	private double length;
 
     // Constructor, two param's (width, length)
+	public Floor(double width, double length) {
 
-        // statement checking if value width < 0
-            // if < 0 then width = 0
-            // else instantiate width
+		if (width < 0) {
+			this.width = 0;
+		} else {
+			this.width = width;
+		}
 
-        // statement checking if value length < 0
-            // if < 0 then length = 0
-            // else instantiate length
+		if (length < 0) {
+			this.length = 0;
+		} else {
+			this.length = length;
+		}
+
+	}
 
     // Method named getArea(no param's)
-        // Return width * length
+	public double getArea() {
+		return width * length;
+	}
 }
