@@ -1,15 +1,30 @@
-package CodingExercise33;
+package CodingExcercise33;
 
 public class Calculator {
 
-    // Declare instance variables
-    // Floor floor
-    // Carpet carpet
+	private Floor floor;
+	private Carpet carpet;
 
-    // Constructor with two parameters (Floor floor, Carpet carpet)
-        // initialize them
+	public Calculator(Floor floor, Carpet carpet) {
 
-    // Method named getTotalCost(no parameters)
-        // Return calculated cost getArea() * getCost()
+		this.floor = floor;
+		this.carpet = carpet;
+
+	}
+
+	public double getTotalCost() {
+
+		return floor.getArea() * carpet.getCost();
+
+	}
+
+	public Floor getFloor() {
+		return floor;
+	}
+
+	public Carpet getCarpet() {
+		return carpet;
+	}
 
 }
+
