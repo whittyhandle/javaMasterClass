@@ -1,7 +1,19 @@
 package CodingExercise33;
 
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+
 
 class CalculatorTest {
-        //todo optional rob
+
+    Calculator calculator;
+
+    @BeforeEach
+    void setUp() {calculator = new Calculator(Floor floor, Carpet carpet); }
+
+    @Test
+    void testTotalCostPass() throws NoSuchFieldException, IllegalAccessException {
+
+    }
 }
