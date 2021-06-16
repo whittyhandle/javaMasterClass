@@ -7,8 +7,7 @@ public class Account {
     private String name;
     private String email;
     private String phoneNum;
-    private String invalidNum = "Please enter a valid number\n";
-	
+
     public Account() { // default constructor for easier testing
     }
 
@@ -21,38 +20,32 @@ public class Account {
         this.phoneNum = phoneNum;
     }
 
-    public double deposit(double depositAmt) {
-	String output = "";
+    public double deposit(double depositAmt){ // added return type for testing
+        System.out.println("You deposited: $" + depositAmt);
+        System.out.println("Your new balance is: $" + this.balance);
+        return (this.balance = this.balance + depositAmt);
+    }
 
-	System.out.println(this.name + "\nYour current balance is: " + balance);
+    public double withdrawal(double withdrawalAmt){ // added return type and
+        if(this.balance - withdrawalAmt < 0) {
+            System.out.println("Insufficient account balance. Withdrawal denied.");
+            return this.balance;
+        } else {
+            System.out.println("You withdrew: $" + withdrawalAmt);
+            System.out.println("Your new balance is: $" + (this.balance - withdrawalAmt)); // I don't know if removes form the balance
+            this.balance = this.balance - withdrawalAmt;
+            return this.balance; // made it so it removes from the balance
+        }
+        
+        // Alternative way to do the above code
+        //final double remainingBalance = this.balance - withdrawalAmt;
 
-	if (depositAmt < 0) {
-	    System.out.println(invalidNum);
-	} else {
-	    balance = balance + depositAmt;
-
-	    output = "You deposited: $" + depositAmt + "\nYour new balance is: $" + balance + "\n";
-
-	    System.out.println(output);
-	}
-	    return balance;
-	}
-
-	public double withdrawal(double withdrawalAmt) {
-	    System.out.println(this.name + "\nYour current balance is: " + this.balance);
-
-	    if (withdrawalAmt > 0.1) {
-		balance = balance - withdrawalAmt;
-
-		String output = balance < 0 ? "You have insufficient funds to withdraw: $" + withdrawalAmt + "\n"
-				: "You withdrew: $" + withdrawalAmt + "\nYour new balance is: $" + balance + "\n";
-
-		System.out.println(output);
-	    } else {
-		System.out.println(invalidNum);
-	    }
-	    return balance;
-	}
+		//String output = this.name + ", " + "you "
+				//+ (remainingBalance < 0 ? "have insufficient funds"
+						//: "withrew $" + withdrawalAmt + " and have a remaining balance of $" + remainingBalance)
+				//+ " in your account \n";
+		//System.out.println(output);
+    }
 
     public String getAccountNum() {
         return accountNum;

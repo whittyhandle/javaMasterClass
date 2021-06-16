@@ -1,4 +1,4 @@
-package CodingExcercise33;
+package CodingExercise33;
 
 import org.junit.jupiter.api.Test;
 

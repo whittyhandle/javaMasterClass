@@ -1,4 +1,4 @@
-package CodingExcercise33;
+package CodingExercise33;
 
 public class Calculator {
 

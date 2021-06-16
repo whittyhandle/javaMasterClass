@@ -14,7 +14,16 @@ public class Main {
         account1.withdrawal(50.00);
 
         account2.deposit(50.0);
-        account2.withdrawal(350.0);
+        account2.withdrawal(160.0);
+
+        account3.deposit(10.0);
+        account3.withdrawal(400.0);
+
+        account4.deposit(0.0);
+        account4.withdrawal(400.0);
+
+        account5.deposit(-100.0);
+        account5.withdrawal(-10.0);
         
         account3.deposit(10.0);
         account3.withdrawal(400.0);

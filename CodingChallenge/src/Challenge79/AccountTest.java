@@ -1,6 +1,7 @@
 package Challenge79;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -14,7 +15,7 @@ class AccountTest {
 
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void testDepositPass() {
         int amount = 20;
         double actual = account.deposit(amount);
@@ -22,7 +23,7 @@ class AccountTest {
         assertEquals(expect, actual, "values do not match");
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void withdrawalPass() {
         int amount = 20;
         double balance = account.setBalance(20);

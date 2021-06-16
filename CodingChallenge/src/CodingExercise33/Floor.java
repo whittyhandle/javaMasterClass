@@ -22,7 +22,15 @@ public class Floor {
 
 	}
 
-    // Method named getArea(no param's)
+	public double getWidth() {
+		return width;
+	}
+
+	public double getLength() {
+		return length;
+	}
+
+	// Method named getArea(no param's)
 	public double getArea() {
 		return width * length;
 	}
