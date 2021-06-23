@@ -1,79 +1,29 @@
 package CodingExercise33;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
+import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 class CalculatorTest {
 
-    @Test
-    public void propertiesAreSetOnCalculatorConstructorAreSet() {
 
-        Floor floorSetTo = new Floor(2, 4);
-        Carpet carpetSetTo = new Carpet(2);
+        @Test
+        public void testGetTotalCost() {
+            //given
+            Floor mockFloorSetTo = mock(Floor.class);
+            Carpet mockCarpetSetTo =  mock(Carpet.class);
+            Calculator calculatorActualValue = new Calculator(mockFloorSetTo, mockCarpetSetTo);
+            when(mockCarpetSetTo.getCost()).thenReturn(4.0);
+            when(mockFloorSetTo.getArea()).thenReturn(2.0);
+            //when
+            double calculatorExpectedValue = 8;
+            //then
+            assertEquals(calculatorExpectedValue, calculatorActualValue.getTotalCost(), "values not the same");
 
-        double calculatorFloorWidthConstructorSet = 2;
-        double calculatorFloorLengthConstructorSet = 4;
-        double calculatorFloorGetAreaConstructorSet = 8;
+        }
 
-        double calculatorCarpetCostConstructorSet = 2;
-
-        Calculator testedObject = new Calculator(floorSetTo, carpetSetTo);
-        assertEquals(calculatorFloorWidthConstructorSet, testedObject.getFloor().getWidth(), "values not the same");
-        assertEquals(calculatorFloorLengthConstructorSet, testedObject.getFloor().getLength(), "values not the same");
-        assertEquals(calculatorFloorGetAreaConstructorSet, testedObject.getFloor().getArea(), "values not the same");
-        assertEquals(calculatorCarpetCostConstructorSet, testedObject.getCarpet().getCost(), "values not the same");
-        assertEquals(calculatorCarpetCostConstructorSet, testedObject.getCarpet().getCost(), "values not the same");
-
-    }
-
-    @Test
-    public void testGetTotalCostValid() {
-
-        Floor floorSetTo = new Floor(2, 4);
-        Carpet carpetSetTo = new Carpet(2);
-
-        double totalCost = 16;
-        Calculator testedObject = new Calculator(floorSetTo, carpetSetTo);
-        assertEquals(totalCost, testedObject.getTotalCost());
-
-    }
-
-    @Test
-    public void testGetTotalCostWithZeroParameterValue() {
-
-        Floor floorSetTo = new Floor(0, 4);
-        Carpet carpetSetTo = new Carpet(2);
-
-        double totalCost = 0;
-        Calculator testedObject = new Calculator(floorSetTo, carpetSetTo);
-        assertEquals(totalCost, testedObject.getTotalCost());
-
-    }
-
-    @Test
-    public void testGetTotalCostWithNegativeParameterValue() {
-
-        Floor floorSetTo = new Floor(-2, 4);
-        Carpet carpetSetTo = new Carpet(2);
-
-        double totalCost = 0;
-        Calculator testedObject = new Calculator(floorSetTo, carpetSetTo);
-        assertEquals(totalCost, testedObject.getTotalCost());
-
-    }
-
-    @Test
-    public void testGetTotalCostWithNegativeCost() {
-
-        Floor floorSetTo = new Floor(-2, 4);
-        Carpet carpetSetTo = new Carpet(-2);
-
-        double totalCost = 0;
-        Calculator testedObject = new Calculator(floorSetTo, carpetSetTo);
-        assertEquals(totalCost, testedObject.getTotalCost());
 
     }
 
